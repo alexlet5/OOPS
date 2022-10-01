@@ -4,39 +4,50 @@
 
 #include <iostream>
 #include "Praktika1.h"
+#include "../utils/ArrayUtils.h"
 
 using namespace std;
 
+//Перенести в начало одномерного массива второй нулевой элемент.
 void Praktika1::run() {
 
-    int i, k, M[15], M_new[15];
-    cout << "Vvedite kolichestvo eleventov massiva M. k=";
-    cin >> k;
+    int arraySize, array[30], secondZeroIndex = 0;
+    bool isFirstZeroFound = false;
 
-    for (i = 1; i <= k; i++) {
-        cout << "Vvedite M[" << i << "]="; // Vvod elementov odnomernogo
-        cin >> M[i]; // massiva
+    cout << "Vvedite kolichestvo elementov massiva: ";
+    cin >> arraySize;
+
+    ArrayUtils::fillArray(array, arraySize);
+    ArrayUtils::printArray(array, arraySize);
+
+    for (int i = 1; i <= arraySize; i++) {
+        if (array[i] == 0 && !isFirstZeroFound) {
+            isFirstZeroFound = true;
+            cout << "First elem found: " << i << endl;
+            continue;
+        };
+        if (array[i] == 0 && isFirstZeroFound) {
+            secondZeroIndex = i;
+            cout << "Second elem found: " << i << endl;
+            break;
+        }
     }
-    cout << endl;
 
-    for (i = 1; i <= k; i++)
-        cout << M[i] << endl; // Vyvod elementov odnomernogo
-    // massiva kak vektor-stolbec
-    cout << endl;
+    if (secondZeroIndex == 0) {
+        cout << "Second zero not found";
+        return;
+    }
 
-    for (i = 1; i <= k; i++)
-        cout << M[i] << " \t"; // Vyvod elementov odnomernogo
-    // massiva kak vektor-stroka
+    int arrayAfter[30];
+    for (int i = 1; i <= arraySize; i++) {
+        if (i == secondZeroIndex) {
+            arrayAfter[1] = array[i];
+        } else if(i < secondZeroIndex) {
+            arrayAfter[i+1] = array[i];
+        } else if(i > secondZeroIndex) {
+            arrayAfter[i] = array[i];
+        }
+    }
 
-    cout << endl;
-
-    for (i = 1; i <= k; i++)
-        if (M[i] < -10) M_new[i] = 0;
-        else M_new[i] = M[i];
-
-    cout << "Obrabotanny massiv" << endl;
-
-    for (i = 1; i <= k; i++)
-        cout << M_new[i] << "\t"; // Vyvod elementov novogo massiva
-    cout << endl;
+    ArrayUtils::printArray(arrayAfter, arraySize);
 }
