@@ -34,37 +34,20 @@ void sortMatrix(int matrix[N][M]) {
     cout << "Summs: " << endl;
     ArrayUtils::printArrayVertical(summs, N);
 
+    //shell sort
     for (int i = 1; i < N; i++) {
-        for (int j = i; j < N; j++) {
-            cout << "j = " << j << " \t";
-            if (summs[j] <= summs[j - 1]) {
-                cout << "swapping " << j << " and " << j - 1 << endl;
-                swapRows(matrix, j, j - 1);
-            }
-        }
-        cout << "i = " << i << endl;
-        int summs[N];
-        for (int k = 0; k < N; k++) {
-            summs[k] = 0;
-        }
-
-        for (int k = 0; k < N; k++) {
-            for (int j = 0; j < M; j++) {
-                summs[k] += matrix[k][j];
-            }
-        }
-        ArrayUtils::printArrayVertical(summs, N);
-    }
-
-    for (int j = M; j > 0; j--) {
-        cout << "j = " << j << " \t";
-        if (summs[j-1] <= summs[j + 1]) {
-            cout << "swapping!!! " << j << " and " << j - 1 << endl;
-            swapRows(matrix, j, j - 1);
+        int j = i - 1;
+        while (j >= 0 && summs[j] > summs[j + 1]) {
+            auto temp = summs[j];
+            summs[j] = summs[j + 1];
+            summs[j + 1] = temp;
+            swapRows(matrix, j, j + 1);
+            cout << "swapped " << j << " and " << j+1 << endl;
+            j--;
         }
     }
-
 }
+
 
 //7.Дана матрица А(n,m).
 // Упорядочить строки матрицы по возрастанию
@@ -75,7 +58,7 @@ void Praktika5::run() {
             {1,  0, 3,  7},
             {4,  3, 9,  3},
             {-2, 5, 12, 1},
-            {5,  5, 7,  1},
+            {5,  -50, 7,  1},
             {-2, 5, 42, 1}
     };
 
@@ -85,10 +68,6 @@ void Praktika5::run() {
 
     cout << "Sorting..." << endl;
     sortMatrix(matrix);
-
-    for (int i = 0; i < N; i++) {
-        ArrayUtils::printArrayHorizontal(matrix[i], M);
-    }
 
     int summs[N];
     for (int i = 0; i < N; i++) {
@@ -103,5 +82,8 @@ void Praktika5::run() {
     cout << "Summs: " << endl;
     ArrayUtils::printArrayVertical(summs, N);
 
+    for (int i = 0; i < N; i++) {
+        ArrayUtils::printArrayHorizontal(matrix[i], M);
+    }
 }
 
