@@ -7,7 +7,8 @@
 #include "../utils/ArrayUtils.h"
 
 using namespace std;
-
+static const int N = 3;
+static const int M = 4;
 
 
 // Дана матрица А(n,m).
@@ -15,8 +16,6 @@ using namespace std;
 // каждый элемент которого  есть количество положительных
 // элементов соответствующей строки матрицы А.
 void Praktika4::run() {
-    static const int N = 3;
-    static const int M = 4;
 
     int matrix[N][M] = {
             {1,  0, 3,  7},
