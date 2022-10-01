@@ -9,7 +9,7 @@ using namespace std;
 
 void ArrayUtils::printArray(int array[], int size) {
 
-    for (int i = 1; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
         cout << array[i] << " \t";
     }
 
@@ -18,7 +18,7 @@ void ArrayUtils::printArray(int array[], int size) {
 
 void ArrayUtils::fillArray(int array[], int size) {
 
-    for (int i = 1; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
         cout << "Vvedite M[" << i << "]="; //Vvod elementov odnomernogo
         cin >> array[i]; // massiva    }
     }

@@ -20,7 +20,7 @@ void Praktika1::run() {
     ArrayUtils::fillArray(array, arraySize);
     ArrayUtils::printArray(array, arraySize);
 
-    for (int i = 1; i <= arraySize; i++) {
+    for (int i = 0; i < arraySize; i++) {
         if (array[i] == 0 && !isFirstZeroFound) {
             isFirstZeroFound = true;
             cout << "First elem found: " << i << endl;
@@ -39,9 +39,9 @@ void Praktika1::run() {
     }
 
     int arrayAfter[30];
-    for (int i = 1; i <= arraySize; i++) {
+    for (int i = 0; i < arraySize; i++) {
         if (i == secondZeroIndex) {
-            arrayAfter[1] = array[i];
+            arrayAfter[0] = array[i];
         } else if(i < secondZeroIndex) {
             arrayAfter[i+1] = array[i];
         } else if(i > secondZeroIndex) {
