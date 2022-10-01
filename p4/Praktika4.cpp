@@ -32,6 +32,4 @@ void Praktika4::run() {
     }
 
     ArrayUtils::printArray(array, M);
-
-
 }
