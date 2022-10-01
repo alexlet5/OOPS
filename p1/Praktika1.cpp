@@ -18,7 +18,7 @@ void Praktika1::run() {
     cin >> arraySize;
 
     ArrayUtils::fillArray(array, arraySize);
-    ArrayUtils::printArray(array, arraySize);
+    ArrayUtils::printArrayHorizontal(array, arraySize);
 
     for (int i = 0; i < arraySize; i++) {
         if (array[i] == 0 && !isFirstZeroFound) {
@@ -49,5 +49,5 @@ void Praktika1::run() {
         }
     }
 
-    ArrayUtils::printArray(arrayAfter, arraySize);
+    ArrayUtils::printArrayHorizontal(arrayAfter, arraySize);
 }

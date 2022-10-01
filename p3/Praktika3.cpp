@@ -25,11 +25,11 @@ void Praktika3::run() {
 
     ArrayUtils::fillArray(array, arraySize);
 
-    ArrayUtils::printArray(array, arraySize);
+    ArrayUtils::printArrayHorizontal(array, arraySize);
 
     cout << "Sorting..." << endl;
     sort(array, array + arraySize, greater<>());
-    ArrayUtils::printArray(array, arraySize);
+    ArrayUtils::printArrayHorizontal(array, arraySize);
 
     int i = 0;
     while (m < array[i]) {

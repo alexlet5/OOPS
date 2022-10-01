@@ -9,7 +9,8 @@
 class ArrayUtils {
 
 public:
-    static void printArray(int array[], int size);
+    static void printArrayHorizontal(int array[], int size);
+    static void printArrayVertical(int *array, int size);
     static void fillArray(int *array, int size);
 };
 

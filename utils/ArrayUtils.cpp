@@ -7,10 +7,19 @@
 
 using namespace std;
 
-void ArrayUtils::printArray(int array[], int size) {
+void ArrayUtils::printArrayHorizontal(int array[], int size) {
 
     for (int i = 0; i < size; i++) {
         cout << array[i] << " \t";
+    }
+
+    cout << endl;
+}
+
+void ArrayUtils::printArrayVertical(int array[], int size) {
+
+    for (int i = 0; i < size; i++) {
+        cout << array[i] << endl;
     }
 
     cout << endl;

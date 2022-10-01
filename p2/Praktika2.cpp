@@ -29,7 +29,7 @@ void Praktika2::run() {
     cin >> arraySize;
 
     ArrayUtils::fillArray(array, arraySize);
-    ArrayUtils::printArray(array, arraySize);
+    ArrayUtils::printArrayHorizontal(array, arraySize);
 
     cout << "Sorting... ";
 
@@ -41,5 +41,5 @@ void Praktika2::run() {
 
     insertSort(array, sortFirstIndex, sortLastIndex);
 
-    ArrayUtils::printArray(array, arraySize);
+    ArrayUtils::printArrayHorizontal(array, arraySize);
 }

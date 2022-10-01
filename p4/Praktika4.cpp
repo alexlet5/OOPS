@@ -8,14 +8,15 @@
 
 using namespace std;
 
-static const int N = 3;
-static const int M = 4;
+
 
 // Дана матрица А(n,m).
 // Сформировать массив В(n),
 // каждый элемент которого  есть количество положительных
 // элементов соответствующей строки матрицы А.
 void Praktika4::run() {
+    static const int N = 3;
+    static const int M = 4;
 
     int matrix[N][M] = {
             {1,  0, 3,  7},
@@ -31,5 +32,5 @@ void Praktika4::run() {
         }
     }
 
-    ArrayUtils::printArray(array, M);
+    ArrayUtils::printArrayHorizontal(array, M);
 }
