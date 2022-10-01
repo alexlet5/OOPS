@@ -2,8 +2,8 @@
 // Created by Alex on 01.10.2022.
 //
 
-#include <iostream>
 #include "Praktika3.h"
+#include <iostream>
 #include "../utils/ArrayUtils.h"
 
 using namespace std;
