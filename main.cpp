@@ -6,7 +6,7 @@
 #include "p5/Praktika5.h"
 #include "p6/Praktika6.h"
 #include "p7/Praktika7.h"
-#include "p2/Praktika2.h"
+#include "p8/Praktika8.h"
 #include "p2/Praktika2.h"
 #include "p2/Praktika2.h"
 #include "p2/Praktika2.h"
@@ -23,6 +23,6 @@ using namespace std;
 
 //поменять циферку - выбрать практику
 int main() {
-    Praktika7::run();
+    Praktika8::run();
     return 0;
 }
