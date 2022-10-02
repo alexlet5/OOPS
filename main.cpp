@@ -7,7 +7,7 @@
 #include "p6/Praktika6.h"
 #include "p7/Praktika7.h"
 #include "p8/Praktika8.h"
-#include "p2/Praktika2.h"
+#include "p9/Praktika9.h"
 #include "p2/Praktika2.h"
 #include "p2/Praktika2.h"
 #include "p2/Praktika2.h"
