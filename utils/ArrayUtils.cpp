@@ -25,6 +25,24 @@ void ArrayUtils::printArrayVertical(int array[], int size) {
     cout << endl;
 }
 
+void ArrayUtils::printArrayHorizontal(double array[], int size) {
+
+    for (int i = 0; i < size; i++) {
+        cout << array[i] << " \t";
+    }
+
+    cout << endl;
+}
+
+void ArrayUtils::printArrayVertical(double array[], int size) {
+
+    for (int i = 0; i < size; i++) {
+        cout << array[i] << endl;
+    }
+
+    cout << endl;
+}
+
 void ArrayUtils::fillArray(int array[], int size) {
 
     for (int i = 0; i < size; i++) {
