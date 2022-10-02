@@ -6,15 +6,15 @@
 #include "Stack.h"
 
 void Stack::push(int data) {
-    Node *q;
-    q = new Node();
-    q->data = data;
+    Node *n;
+    n = new Node();
+    n->data = data;
 
     if (top == nullptr) {
-        top = q;
+        top = n;
     } else {
-        q->next = top; //Проводим связь от нового элемента, к вершине. Тоесть кладем книжку на вершину стопки.
-        top = q; //Обозначаем, что вершиной теперь является новый элемент
+        n->next = top;
+        top = n;
     }
     _size++;
 }
