@@ -12,31 +12,26 @@ using namespace std;
 
 
 //7.Удвоить каждое слово во введённом предложении.
+// in_text.txt >> out_text.txt
 void Praktika9::run() {
 
+    ifstream fin("C:\\in_text.txt");
+    ofstream fout("C:\\out_text.txt");
 
-    ofstream fout("C:\\data.dat");
-    int count = 0;
-
-    for (int i = 10; i <= 100; i++) {
-
-    }
-    fout.flush();
-    fout.close();
-
-
-    ifstream fin("C:\\data.dat");
     if (!fin) {
         cout << "error!\n";
         return;
     }
 
-    double read;
-    double array[10];
-    int counter = 0;
-    int size = 0;
+    std::string word;
     while (!fin.eof()) {
-
+        fin >> word;
+        word += " ";
+        cout << word;
+        fout << word<< word;
     }
 
+
+    fout.flush();
+    fout.close();
 }
