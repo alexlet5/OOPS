@@ -3,3 +3,9 @@
 //
 
 #include "Praktika12.h"
+#include <iostream>
+#include <fstream>
+#include <cmath>
+#include "../utils/ArrayUtils.h"
+
+using namespace std;

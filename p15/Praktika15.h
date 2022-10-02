@@ -7,6 +7,8 @@
 
 
 class Praktika15 {
+public:
+    static void run();
 
 };
 
