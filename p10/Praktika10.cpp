@@ -6,13 +6,17 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <list>
 #include "../utils/ArrayUtils.h"
 
 using namespace std;
+const auto HIGH_INCLUDING = 50;
+const auto LOW_INCLUDING = 20;
 
-struct node {
-    unsigned char info;
-    struct node *next;
+const auto predicateRange = [](int &value) {
+    if (value > HIGH_INCLUDING || value < LOW_INCLUDING)
+        return false;
+    else return true;
 };
 
 //Используя  динамическую  структуру  список,
@@ -20,30 +24,15 @@ struct node {
 // от  20  до  50. Записать их в отдельный динамический массив.
 // Полученный массив вывести на экран.
 void Praktika10::run() {
+    list<int> list1 = {0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75};
+    list<int> list2;
+    cout << "List size not in range: " << list1.size() << endl;
 
-    srand(time(nullptr));// без этого числа будут одинаковые
-    typedef node *NodePtr;
-    NodePtr head = nullptr;
-    NodePtr tek;
+    std::copy_if(list1.begin(),
+                 list1.end(),
+                 std::back_inserter(list2),
+                 predicateRange
+    );
 
-    NodePtr hvost; // указатель на "хвост" списка
-    int N = 50;
-    int cnt = 1;
-    if (head == nullptr) {
-        head = new node;
-        head->info = char(rand() % 255); // случайныйсимвол
-        head->next = nullptr;
-        hvost = head;
-    }
-
-    for (int i = 2; i <= N; i++) {
-        tek = new node;
-        ++cnt;
-        tek->info = char(rand() % 255);
-        tek->next = nullptr;
-        hvost->next = tek;
-        // вданномслучае-NULL
-        hvost = tek;
-    }
-
+    cout << "List size in range: " << list2.size() << endl;
 }
