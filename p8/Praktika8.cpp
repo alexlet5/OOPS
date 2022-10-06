@@ -18,7 +18,7 @@ auto f(double x) {
 void Praktika8::run() {
 
 
-    ofstream fout("C:\\data.dat");
+    ofstream fout("C:\\id.dat");
     int count = 0;
 
     for (int i = 10; i <= 100; i++) {
@@ -38,7 +38,7 @@ void Praktika8::run() {
     fout.close();
 
 
-    ifstream fin("C:\\data.dat");
+    ifstream fin("C:\\id.dat");
     if (!fin) {
         cout << "error!\n";
         return;
