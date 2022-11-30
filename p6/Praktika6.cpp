@@ -49,7 +49,7 @@ void task1() {
     cout << "Encountered more than once: " << endl;
     ArrayUtils::printArrayHorizontal(encounteredMoreThanOnce, encounteredMoreThanOnceCount);
 
-    int min = INT_MAX;
+    int min = INT16_MAX;
     for (int i = 0; i < encounteredMoreThanOnceCount; i++) {
         if (min > encounteredMoreThanOnce[i])
             min = encounteredMoreThanOnce[i];
@@ -58,7 +58,8 @@ void task1() {
     cout << "Minimal element encountered more than once = " << min << endl;
 }
 
-//7.Дана матрица А(m,m). Вычислить сумму элементов, лежащих выше и ниже главной диагонали матрицы, и ответить какая сумма больше.
+//7.Дана матрица А(m,m). Вычислить сумму элементов,
+// лежащих выше и ниже главной диагонали матрицы, и ответить какая сумма больше.
 void task2() {
     int SIZE;
 

@@ -27,7 +27,7 @@ void Praktika4::run() {
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            if (matrix[i][j] >= 0) array[j]++;
+            if (matrix[i][j] > 0) array[j]++;
         }
     }
 

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 #include "p1/Praktika1.h"
 #include "p2/Praktika2.h"
 #include "p3/Praktika3.h"
@@ -22,6 +21,6 @@ using namespace std;
 
 //поменять циферку - выбрать практику
 int main() {
-    Praktika9::run();
+    Praktika2::run();
     return 0;
 }

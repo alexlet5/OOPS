@@ -14,7 +14,11 @@ void Praktika7::run() {
     int arraySize = 0, array[50];
     ifstream fin;
 
-    fin.open("C:\\in_massiv.txt");
+    string home = getenv("HOME");
+    cout << home;
+
+    fin.open(home + "/" + "in_massiv.txt");
+
     if (!fin) {
         cout << "error!\n";
         return;
@@ -65,7 +69,7 @@ void Praktika7::run() {
     ArrayUtils::printArrayHorizontal(arrayAfter, arraySize);
 
     ofstream fout;
-    fout.open("C:\\out_massiv.txt");
+    fout.open(home + "/" + "out_massiv.txt");
     for (int i = 0; i < arraySize; i++){
         fout << arrayAfter[i] << " ";
     }

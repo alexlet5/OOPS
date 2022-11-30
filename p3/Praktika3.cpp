@@ -12,13 +12,10 @@ using namespace std;
 //7.  Дан  одномерный  массив  размерности n,  отсортированный  по убыванию.
 // Найти место в массиве, на котором следует расположить элемент m,
 // чтобы  не  нарушить  убывающую  последовательность  чисел.
-// Значение элемента mвводится с клавиатуры.
+// Значение элемента m вводится с клавиатуры.
 void Praktika3::run() {
 
     int arraySize, array[30], m;
-
-    cout << "Vvedite m: ";
-    cin >> m;
 
     cout << "Vvedite kolichestvo elementov massiva: ";
     cin >> arraySize;
@@ -26,6 +23,10 @@ void Praktika3::run() {
     ArrayUtils::fillArray(array, arraySize);
 
     ArrayUtils::printArrayHorizontal(array, arraySize);
+
+    cout << "Vvedite m: ";
+    cin >> m;
+
 
     cout << "Sorting..." << endl;
     sort(array, array + arraySize, greater<>());

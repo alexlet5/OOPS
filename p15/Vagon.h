@@ -10,33 +10,34 @@
 
 class Vagon {
 protected:
-    virtual double getK() {return 0;};
+    int _weight;
+    int _count;
+    double _k;
+
 
 public:
-    virtual double price() { return 0.0; };
+    Vagon(int weight, int count, double k) {
+        _weight = weight;
+        _count = count;
+        _k = k;
+    }
+
+    virtual double price() { return _k * _weight * _count; };
 
     virtual void print() {};
 };
 
 class AutomobileVagon : public Vagon {
-    int _weight;
-    int _count;
-
 public:
-    AutomobileVagon(int weight, int count);
-    double getK() override;
-    double price() override;
+    AutomobileVagon(int weight, int count) : Vagon(weight, count, 1.1) {};
+
     void print() override;
 };
 
 class Cisterna : public Vagon {
-    int _weight;
-    int _count;
-
 public:
-    Cisterna(int weight, int count);
-    double getK() override;
-    double price() override;
+    Cisterna(int weight, int count) : Vagon(weight, count, 1.4) {};
+
     void print() override;
 };
 

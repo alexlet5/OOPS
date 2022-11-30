@@ -15,8 +15,9 @@ using namespace std;
 // in_text.txt >> out_text.txt
 void Praktika9::run() {
 
-    ifstream fin("C:\\in_text.txt");
-    ofstream fout("C:\\out_text.txt");
+    string home = getenv("HOME");
+    ifstream fin(home + "/" + "in.txt");
+    ofstream fout(home + "/" + "out.txt");
 
     if (!fin) {
         cout << "error!\n";
