@@ -21,6 +21,6 @@ using namespace std;
 
 //поменять циферку - выбрать практику
 int main() {
-    Praktika11::run();
+    Praktika13::run();
     return 0;
 }

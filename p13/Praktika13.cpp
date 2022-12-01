@@ -25,8 +25,8 @@ public:
     string gender;
     string city;
     string diagnosis;
-    int age;
-    int wardNum;
+    string age;
+    string wardNum;
     string department;
 
     vector<string> days = {};
@@ -38,8 +38,8 @@ public:
             string gender,
             string city,
             string diagnosis,
-            int age,
-            int wardNum,
+            string age,
+            string wardNum,
             string department
     ) : surname(std::move(surname)),
         initials(std::move(initials)),
@@ -50,35 +50,110 @@ public:
         wardNum(wardNum),
         department(std::move(department)) {}
 
+    Patient();
+
     void print() {
         cout << surname << " " << initials << " " << gender << endl;
     }
+
 };
 
-string criteria = "Fi";
-const auto predicateStartsWith = [](Patient &value) {
-    if (value.surname.starts_with(criteria))
-        return true;
-    else return false;
-};
+Patient::Patient() {
 
+}
 
 void Praktika13::run() {
 
     list<Patient> patients = {
-            Patient("First", "F. F.", "Male", "Voronezh", "Diabetes", 23, 3, "Primary"),
-            Patient("Finik", "R. R.", "Male", "Voronezh", "Diabetes", 23, 3, "Primary"),
-            Patient("Second", "S. S.", "Male", "Krasnodar", "Tuberculosis", 21, 3, "Secondary")
+            Patient("First", "F. F.", "Male", "Voronezh", "Diabetes", "23", "3", "Primary"),
+            Patient("Finik", "R. R.", "Male", "Voronezh", "Diabetes", "23", "3", "Primary"),
+            Patient("Second", "S. S.", "Male", "Krasnodar", "Tuberculosis", "21", "3", "Secondary")
     };
-    for (auto &iter: patients) {
-        iter.print();
-    }
 
-    cout << endl << "Filtering..." << endl;
-    list<Patient> filtered;
-    std::copy_if(patients.begin(), patients.end(), std::back_inserter(filtered), predicateStartsWith);
+    cout
+            << "0 - выход" << endl
+            << "1 - узнать размер" << endl
+            << "2 - печать" << endl
+            << "3 - ввести нового" << endl
+            << "4 - поиск" << endl;
 
-    for (auto &iter: filtered) {
-        iter.print();
+    bool start = true;
+    while (start) {
+        cout << endl;
+        int input;
+        cin >> input;
+        switch (input) {
+            case 0: {
+                start = false;
+                break;
+            }
+            case 1: {
+                cout << patients.size();
+                break;
+            }
+            case 2: {
+                for (auto &iter: patients) {
+                    iter.print();
+                }
+                break;
+            }
+            case 3: {
+                auto patient = Patient();
+                cout << "Введите фамилию: ";
+                cin >> patient.surname;
+                cout << endl;
+                cout << "Введите Инициалы: ";
+                cin >> patient.initials;
+                cout << endl;
+                cout << "Введите Пол: ";
+                cin >> patient.gender;
+                cout << endl;
+                cout << "Введите город: ";
+                cin >> patient.city;
+                cout << endl;
+                cout << "Введите диагноз: ";
+                cin >> patient.diagnosis;
+                cout << endl;
+                cout << "Введите возраст: ";
+                cin >> patient.age;
+                cout << endl;
+                cout << "Введите палату: ";
+                cin >> patient.wardNum;
+                cout << endl;
+                cout << "Введите отделение: ";
+                cin >> patient.department;
+                cout << endl;
+
+                patients.push_back(patient);
+                break;
+            }
+            case 4: {
+                cout << "Введите начало фамилии: ";
+                string elem;
+                cin >> elem;
+
+                auto predicateStartsWith = [&elem](Patient &value) {
+                    if (value.surname.starts_with(elem))
+                        return true;
+                    else return false;
+                };
+
+                list<Patient> filtered;
+                std::copy_if(patients.begin(), patients.end(), std::back_inserter(filtered), predicateStartsWith);
+
+                for (auto &iter: filtered) {
+                    iter.print();
+                }
+                break;
+            }
+            default: {
+                cout
+                        << "0 - выход" << endl
+                        << "1 - узнать размер" << endl
+                        << "2 - печать" << endl
+                        << "3 - ввести нового" << endl
+                        << "4 - поиск" << endl;
+            }
+        }
     }
 }
